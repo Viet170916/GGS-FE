@@ -1,4 +1,5 @@
 'use client';
+import Button from "@/components/Button/Button";
 import { appGlobal } from "@/config/window";
 import { useAuth } from "@/middlewares/auth";
 import classNames from "classnames";
@@ -13,10 +14,12 @@ export default function Auth(): JSX.Element{
   }
   const isLogin = useAuth( token );
   return (
-    <div className = { classNames( "grid", "" ) }>
+    <div className = { classNames( "justify-center", "h-screen" ) }>
       { isLogin ? <div>
-          <p>Login Successfully</p>
-          <Link href = { "/home" }>Go to home page</Link>
+          <p className = { classNames( "text-center" ) }>Login Successfully</p>
+          <Button click = { () => {} }>
+            <Link href = { "/home" }>Go to home page</Link>
+          </Button>
         </div> :
         <div>loading</div>
       }

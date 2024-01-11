@@ -1,27 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+        --foreground-rgb: 0, 0, 0;
+        --background-start-rgb: 214, 219, 220;
+        --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root{
+        --primary-light: #8abdff;
+        --primary: #4b41af;
+        --primary-dark: #46179d;
+        --white: #1c2b3f;
+        --greyLight-1: #E4EBF5;
+        --greyLight-2: #040b0e;
+        --greyLight-3: rgb(23, 37, 52);
+        --greyDark: #9baacf;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+:root{
+        --primary-light: #8abdff;
+        --primary: #6d5dfc;
+        --primary-dark: #5b0eeb;
+        --white: #FFFFFF;
+        --greyLight-1: #E4EBF5;
+        --greyLight-2: #c8d0e7;
+        --greyLight-3: #bec8e4;
+        --greyDark: #9baacf;
 }
+
+html{
+        background-color: var(--greyLight-1);
+        color: #0b121c;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+}
+
+/*@media (prefers-color-scheme: dark){*/
+/*        :root{*/
+/*                --foreground-rgb: 255, 255, 255;*/
+/*                --background-start-rgb: 0, 0, 0;*/
+/*                --background-end-rgb: 0, 0, 0;*/
+/*        }*/
+/*}*/
+/*body{*/
+/*        color: rgb(var(--foreground-rgb));*/
+/*        background: linear-gradient(*/
+/*                to bottom,*/
+/*                transparent,*/
+/*                rgb(var(--background-end-rgb))*/
+/*        ) rgb(var(--background-start-rgb));*/
+/*}*/

@@ -3,8 +3,9 @@
      grid-column: 3/4;
      grid-row: 3/4;
      .form__input {
-          height: 30px;
-          width: 88px;
+          min-height: 30px;
+          min-width: 88px;
+          max-height: 80px;
           max-width: 310px !important;
           margin: 10px;
           border: none;

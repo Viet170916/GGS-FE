@@ -14,14 +14,15 @@ export default function Auth(): JSX.Element{
   }
   const isLogin = useAuth( token );
   return (
-    <div className = { classNames( "justify-center", "h-screen" ) }>
-      { isLogin ? <div>
-          <p className = { classNames( "text-center" ) }>Login Successfully</p>
+    <div className = { classNames( "justify-center", "h-screen", "p-24" ) }>
+      { isLogin ?
+        <div className = { classNames( "grid", "gap-y-3" ) }>
+          <p className = { classNames( "text-center", "text-xl" ) }>Login Successfully</p>
           <Button click = { () => {} }>
             <Link href = { "/home" }>Go to home page</Link>
           </Button>
         </div> :
-        <div>loading</div>
+        <div className = { classNames( "text-center" ) }>loading</div>
       }
     </div>
   );

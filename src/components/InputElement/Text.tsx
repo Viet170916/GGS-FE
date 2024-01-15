@@ -17,7 +17,7 @@ function Text( props: { id?: string, className?: string, initValue?: string, tra
         type = { (props.type == "email" && "email") || "text" }
         // @ts-ignore
         // onBlur = { prop.transValue?.( text ) }
-        onBlur = { ( event ) => {props.transValue( event.target.value ); } }
+        onBlur = { ( event ) => {props.transValue?.( event.target.value ); } }
         placeholder = { props.placeholder }
         onChange = { textChange }
       />

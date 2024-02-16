@@ -7,6 +7,7 @@ import Link from "next/link";
 import React, { JSX } from "react";
 
 export default function Auth(): JSX.Element{
+
   const token: string | null = new URLSearchParams( appGlobal?.location.search ).get( "token" );
   if( appGlobal ){
     appGlobal.localStorage['accessToken'] = token;
@@ -20,7 +21,7 @@ export default function Auth(): JSX.Element{
             Login Successfully
           </p>
           <Button click = { (): void => {} }>
-            <Link href = { "/home" }>Go to home page</Link>
+            <a href = { "/" }>Go to home page</a>
           </Button>
         </div> :
         <div className = { classNames( "text-center" ) }>loading</div>

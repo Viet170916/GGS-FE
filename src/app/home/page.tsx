@@ -25,20 +25,25 @@ function Header( { setData }: { setData: ( data: any ) => void } ): JSX.Element{
   const router = useRouter();
   const [ search, setSearch ] = useState( '' );
   function searchHandler(){
-    axios.get( "api/search", {
-      params: { q: search },
-    } )
-         .then( ( response: AxiosResponse ) => {
-           setData( response.data );
-         } )
-         .catch( ( error ) => {
-           router.push( '/login' );
-         } );
+    if( search.trim() )
+      axios.get( "api/search", {
+        params: { q: search },
+      } )
+           .then( ( response: AxiosResponse ) => {
+             setData( response.data );
+           } )
+           .catch( ( error ) => {
+             if( error.response.status === 401 )
+               router.push( '/login' );
+           } );
+    else{
+      setSearch( "" );
+    }
   }
   return (
     <div id = { "home-layout-header" } className = { classNames( "convex border-rd-10", "h-20" ) }>
       <div id = { "search-area" } className = { classNames( "flex" ) }>
-        <Text id = { "search-bar" } placeholder = { "search" } className = { classNames( "w-80" ) } transValue = { setSearch } />
+        <Text id = { "search-bar" } placeholder = { "search" } className = { classNames( "w-80" ) } transValue = { setSearch } initValue = { search } />
         <Button click = { searchHandler }><IoSearch /></Button>
       </div>
     </div>

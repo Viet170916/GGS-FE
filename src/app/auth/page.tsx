@@ -3,7 +3,6 @@ import Button from "@/components/Button/Button";
 import { appGlobal } from "@/config/window";
 import { useAuth } from "@/middlewares/auth";
 import classNames from "classnames";
-import Link from "next/link";
 import React, { JSX } from "react";
 
 export default function Auth(): JSX.Element{
